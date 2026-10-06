@@ -9,3 +9,10 @@ class Patient(BaseModel):
     phone: str = Field(..., min_length=1)
     address: str = Field(..., min_length=1)
     symptoms: list[str] = Field(default_factory=list)
+
+
+class Doctor(BaseModel):
+    id: int
+    name: str = Field(..., min_length=1)
+    specialization: str = Field(..., min_length=1)
+    phone: str = Field(..., min_length=1)
