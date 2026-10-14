@@ -1,9 +1,13 @@
 from fastapi import FastAPI, HTTPException
 from patient_management_system.models import Patient
 from patient_management_system.doctor import router as doctor_router
+from patient_management_system.diagnosis import router as diagnosis_router
+from patient_management_system.prescription import router as prescription_router
 
 app = FastAPI(title="Patient Management System")
 app.include_router(doctor_router)
+app.include_router(diagnosis_router)
+app.include_router(prescription_router)
 
 patients_db: list[Patient] = []
 next_patient_id = 1
